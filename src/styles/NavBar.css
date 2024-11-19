@@ -1,0 +1,83 @@
+.NavBar {
+    width: 1519px;
+    height: 104px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinea el contenido a la izquierda */
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    background-color: #F9BE20;
+}
+.NavBar p{
+    color: black;
+    font-size: 12px;
+}
+.Buscador {
+    display: flex;
+    position: relative;
+    left: 270px;
+    top: 10px;
+    justify-content: space-between;
+    height: 45.47px;
+}
+
+.input-buscador {
+    padding: 8px;
+    font-size: 12px;
+    border: 0 solid #ffffff;
+    width: 684px; /* Ancho del campo de búsqueda */
+    background-color: white;
+    color: black;
+    outline: none;
+    box-shadow: #000000;
+    margin-left: 20px;
+}
+
+
+
+.btn-buscar {
+    padding: 8px 16px;
+    font-size: 12px;
+    background-color: white;
+    border-radius: 0; /* Establece las esquinas puntiagudas */
+    color: gray;
+    border: 0;
+    cursor: pointer;
+}
+
+.btn-buscar:hover {
+    background-color: #c6c6c6; /* Cambiar color al pasar el ratón */
+    color: black;
+}
+.Links {
+    position: relative;
+     /* Hace que ocupe todo el ancho */
+     left: 260px;
+}
+
+.Links ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0 0 20px;
+}
+.Part2{
+    margin-left: 350px;
+}
+.Part1, .Part2 {
+    display: flex; /* Alinea los elementos en fila */
+}
+
+.Part1 li, .Part2 li {
+    margin-right: 20px; /* Espaciado entre los elementos de la lista */
+    display: flex;
+    align-items: center; /* Alinea la imagen con el texto */
+}
+
+.Part1 img, .Part2 img { 
+    margin-right: 2px; /* Espacio entre la imagen y el texto */
+    height: 19px; /* Ajusta el tamaño de la imagen */
+}
