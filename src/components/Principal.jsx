@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import BarrasPrincipal from './BarrasPrincipal'
+import BarrasPrincipal from './BarrasPrincipal';
 import CategoriasSeccion from './CategoriasSeccion';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from './firebaseConfig.js';
@@ -14,7 +14,7 @@ const Principal = () => {
     const productsArray2 = [];
 
     querySnapshot.forEach((doc) => {
-      const product = { id: doc.id, ...doc.data() };  // Aquí asignamos el ID del documento de Firebase a cada producto
+      const product = { id: doc.id, ...doc.data() }; // Asigna el ID del documento
       if (product.section === 1) {
         productsArray1.push(product);
       } else if (product.section === 2) {
@@ -24,6 +24,11 @@ const Principal = () => {
 
     setProducts1(productsArray1);
     setProducts2(productsArray2);
+  };
+
+  // Formatea los precios en el formato deseado
+  const formatPrice = (price) => {
+    return `$${price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")} COP`;
   };
 
   useEffect(() => {
@@ -36,16 +41,15 @@ const Principal = () => {
         <img src="src/assets/Images/FondoP.png" alt="Fondo" className="background-image" />
       </div>
       <div className="content-container">
-        <BarrasPrincipal title="Ofertas" products={products1} />
-        <BarrasPrincipal title="Recien llegado" products={products2} />
+        <BarrasPrincipal title="Ofertas" products={products1} formatPrice={formatPrice} />
+        <BarrasPrincipal title="Recien llegado" products={products2} formatPrice={formatPrice} />
         <CategoriasSeccion />
-        <BarrasPrincipal title="Martillos" products={products1} />
-        <BarrasPrincipal title="Electrico" products={products1} />
-        <BarrasPrincipal title="Pisos" products={products1} />
+        <BarrasPrincipal title="Martillos" products={products1} formatPrice={formatPrice} />
+        <BarrasPrincipal title="Electrico" products={products1} formatPrice={formatPrice} />
+        <BarrasPrincipal title="Pisos" products={products1} formatPrice={formatPrice} />
       </div>
     </div>
   );
 };
-
 
 export default Principal;
