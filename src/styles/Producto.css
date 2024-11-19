@@ -1,3 +1,105 @@
-.ProductoContainer{
-    background-color: rgb(254, 0, 0);
+.Centrador {
+  position: relative;
+  top :100px;
+  width: 1535px;
+  height: 5000px;
+  display: flex;
+  overflow: visible; 
+  justify-content: center;  /* Centra el contenido horizontalmente */ 
+  background-color: #EAEAEA;    /* Centra el contenido verticalmente */
 }
+.ProductoContainer{
+    position: relative;
+    top: 0;
+    width: 940px;
+    display: flex;
+    max-width: 1000px;
+    flex-wrap: wrap;
+    height: auto;
+    background-color: rgb(255, 255, 255);
+    padding:20px;
+    border-radius: 8px;
+  }
+  .Encabezados {
+    
+    display: flex; /* Activa flexbox */
+    justify-content: space-between; /* Distribuye los elementos con espacio entre ellos */
+    margin-bottom: 20px; /* Espacio debajo de los encabezados */
+    width: 100%; /* Asegura que el contenedor ocupe todo el ancho */
+}
+
+.Encabezados-image,
+.Encabezados-Caracteristicas,
+.Stock {
+    /* Aquí podemos definir el tamaño de cada div, por ejemplo: */
+    margin-right: 20px; /* Espaciado entre los divs (si es necesario) */
+}
+.Encabezados-image{
+    width:300px;
+}
+.Encabezados-image img{
+    flex: 1; /* Ocupará todo el espacio disponible proporcionalmente */
+    max-width: 100%; /* Limita el ancho máximo de la imagen */
+}
+
+.Encabezados-Caracteristicas {
+    flex: 1; /* Ocupará el mismo espacio proporcional */
+    max-width: 40%; /* Limita el ancho máximo de las características */
+}
+
+.Stock {
+    flex: 1; /* Ocupará el mismo espacio proporcional */
+    max-width: 25%; /* Limita el ancho máximo del stock */
+}
+
+.Encabezados-image img {
+    width: 100%; /* Asegura que la imagen ocupe todo el espacio disponible */
+    height: auto;
+    border-radius: 8px;
+}
+p.nameP{
+    font-size: 20px;
+    font-weight: bold;
+}
+p.priceP{
+    font-size: 20px;
+    font-weight: lighter;
+
+}
+p.caraP{
+    width: 68%;
+}
+.Encabezados-Caracteristicas p,
+.Stock p {
+    margin: 5px 0;
+    text-align: left;
+}
+  .MismaCategoria {
+    margin-top: 20px;
+    height: 360px;
+    border-radius: 8px;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .DescripcionProducto {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+   
+  }
+  
+  .DescripcionProducto p {
+    line-height: 1.6;
+    margin-bottom: 10px;
+    text-align: left;
+    font-size: 25px;
+  }
+  
+  .OtroProductos {
+    margin-top:20px;
+    height: 360px;
+    border-radius: 8px;
+    width: 100%;
+  }
