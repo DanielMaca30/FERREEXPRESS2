@@ -1,11 +1,13 @@
 
-body {
-    margin: 0;
-    padding: 0;
+.Centrador {
+    position: relative;
+    top: 100px;
+    width: 1535px;
+    height: 3000px;   /* Define una altura grande para esta sección */
+    display: flex;
+    justify-content: center;
     background-color: #EAEAEA;
-    max-width: 100%; /* Evita usar un valor fijo */
-}
-
+  }
 .page-container {
     position: relative;
     top: 25px;
@@ -132,6 +134,7 @@ body {
 }
 .aviso_Condi{
     margin-top: 40px;
+    height: 20px;
 }
 .aviso_Condi p{
     
@@ -139,12 +142,15 @@ body {
 }
 .FerreExpress{
     color:#747474;
+    height: 20px;
 }
 .Container-Pie {
     width: 1542px;
     background-color: #F0F0F0;
     border-top: 1px solid #D3D3D3; /* Borde superior */
     height: 266px;
+    display: flex;
+    justify-content: center;
     top: 150px;
     position: relative; /* Puede ser fixed si necesitas que siempre esté visible */
     bottom: 0;
