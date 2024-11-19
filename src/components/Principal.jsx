@@ -3,7 +3,6 @@ import BarrasPrincipal from './BarrasPrincipal'
 import CategoriasSeccion from './CategoriasSeccion';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from './firebaseConfig.js';
-import PieDePagina from './PieDePagina.jsx';
 
 const Principal = () => {
   const [products1, setProducts1] = useState([]);
@@ -43,7 +42,6 @@ const Principal = () => {
         <BarrasPrincipal title="Martillos" products={products1} />
         <BarrasPrincipal title="Electrico" products={products1} />
         <BarrasPrincipal title="Pisos" products={products1} />
-        <PieDePagina />
       </div>
     </div>
   );

@@ -141,7 +141,7 @@ body {
     color:#747474;
 }
 .Container-Pie {
-    width: 1542px;
+    width: 100%;
     background-color: #F0F0F0;
     border-top: 1px solid #D3D3D3; /* Borde superior */
     height: 266px;

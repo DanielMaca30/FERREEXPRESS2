@@ -1,100 +1,114 @@
 .NavBar {
-    width: 1535px;
-    height: 104px;
+    width: 100%;
+    height: 150px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Alinea el contenido a la izquierda */
+    align-items: center; /* Centra el contenido horizontalmente */
+    justify-content: space-between; /* Espaciado uniforme entre elementos */
     position: absolute;
     top: 0;
     left: 0;
-    margin: 0;
-    padding: 0;
+    padding: 10px 0;
     background-color: #F9BE20;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para resaltar la barra */
 }
 
-.NavBar p{
+.NavBar p {
     color: black;
     font-size: 12px;
+    margin: 0;
 }
+
 .Buscador {
     display: flex;
-    position: relative;
-    left: 270px;
-    top: 10px;
-    justify-content: space-between;
-    height: 45.47px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    height: 45px;
+    gap: 10px; /* Espacio entre el input y el botón */
 }
 
 .input-buscador {
-    padding: 8px;
-    font-size: 12px;
-    border: 0 solid #ffffff;
-    width: 684px; /* Ancho del campo de búsqueda */
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px; /* Bordes redondeados */
+    width: 600px; /* Ajusta el ancho */
     background-color: white;
     color: black;
     outline: none;
-    box-shadow: #000000;
-    margin-left: 20px;
+    transition: border-color 0.3s ease;
 }
 
-
+.input-buscador:focus {
+    border-color: #F9BE20; /* Resalta el campo al enfocar */
+}
 
 .btn-buscar {
-    padding: 8px 16px;
-    font-size: 12px;
+    padding: 10px 20px;
+    font-size: 14px;
     background-color: white;
-    border-radius: 0; /* Establece las esquinas puntiagudas */
+    border-radius: 4px;
     color: gray;
-    border: 0;
+    border: 1px solid #e0e0e0;
     cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .btn-buscar:hover {
-    background-color: #c6c6c6; /* Cambiar color al pasar el ratón */
+    background-color: #F9BE20;
     color: black;
 }
+
 .Links {
-    position: relative;
-     /* Hace que ocupe todo el ancho */
-     left: 260px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 40px; /* Espacio entre los enlaces */
 }
 
 .Links ul {
     display: flex;
     list-style-type: none;
     padding: 0;
-    margin: 10px 0 0 20px;
+    margin: 0;
+    gap: 30px; /* Espacio uniforme entre los elementos */
 }
-/* Estilo para el li en estado normal */
-.NavBar .Links li {
-    cursor: default; /* El cursor normal */
+
+.Links li {
+    font-size: 16px;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
 }
-.NavBar .Links li p {
-    color: #000000;
-    transition: color 0.3s ease; 
-}
-.NavBar .Links li p:hover {
+
+.Links li:hover {
     color: #575757;
 }
-/* Efecto de hover */
-.NavBar .Links li:hover {
-    cursor: pointer; /* Cambia el cursor a una mano */
-    
+
+.Links a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
 }
-.Part2{
-    margin-left: 350px;
+
+.Links a:hover {
+    color: #575757;
 }
+
 .Part1, .Part2 {
-    display: flex; /* Alinea los elementos en fila */
+    display: flex;
+    gap: 15px; /* Ajusta el espacio entre elementos */
 }
 
 .Part1 li, .Part2 li {
-    margin-right: 20px; /* Espaciado entre los elementos de la lista */
     display: flex;
-    align-items: center; /* Alinea la imagen con el texto */
+    align-items: center;
 }
 
-.Part1 img, .Part2 img { 
-    margin-right: 2px; /* Espacio entre la imagen y el texto */
-    height: 19px; /* Ajusta el tamaño de la imagen */
+.Part1 img, .Part2 img {
+    margin-right: 8px; /* Espacio entre la imagen y el texto */
+    height: 20px; /* Ajusta el tamaño de la imagen */
 }

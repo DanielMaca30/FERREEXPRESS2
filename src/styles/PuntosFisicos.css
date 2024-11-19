@@ -1,0 +1,30 @@
+.puntos-fisicos-container {
+    margin-top: 70px;
+    background-color: #eaeaea;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    width: 100%; /* Ajusta según tu diseño */
+    max-width: 1500px;
+  }
+  
+  .puntos-fisicos-title {
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+    text-align: left;
+  }
+  
+  .map-container {
+    width: 100%;
+    height: 600px; /* Aumentamos la altura del contenedor */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .puntos-fisicos-direccion {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+  }
