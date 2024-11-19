@@ -9,14 +9,13 @@ const Principal = () => {
   const [products1, setProducts1] = useState([]);
   const [products2, setProducts2] = useState([]);
 
-  // Función para obtener los productos desde Firebase
   const fetchProducts = async () => {
-    const querySnapshot = await getDocs(collection(db, "products")); // "products" es el nombre de la colección en Firestore
+    const querySnapshot = await getDocs(collection(db, "products"));
     const productsArray1 = [];
     const productsArray2 = [];
 
     querySnapshot.forEach((doc) => {
-      const product = doc.data();
+      const product = { id: doc.id, ...doc.data() };  // Aquí asignamos el ID del documento de Firebase a cada producto
       if (product.section === 1) {
         productsArray1.push(product);
       } else if (product.section === 2) {
@@ -28,7 +27,6 @@ const Principal = () => {
     setProducts2(productsArray2);
   };
 
-  // Llamar a la función al montar el componente
   useEffect(() => {
     fetchProducts();
   }, []);
@@ -46,13 +44,10 @@ const Principal = () => {
         <BarrasPrincipal title="Electrico" products={products1} />
         <BarrasPrincipal title="Pisos" products={products1} />
         <PieDePagina />
-        
-        
-        {/* Puedes agregar más instancias de BarrasPrincipal si es necesario */}
       </div>
     </div>
   );
 };
 
 
-export default Principal
+export default Principal;

@@ -1,5 +1,5 @@
 .NavBar {
-    width: 1519px;
+    width: 1535px;
     height: 104px;
     display: flex;
     flex-direction: column;
@@ -11,6 +11,7 @@
     padding: 0;
     background-color: #F9BE20;
 }
+
 .NavBar p{
     color: black;
     font-size: 12px;
@@ -63,6 +64,22 @@
     list-style-type: none;
     padding: 0;
     margin: 10px 0 0 20px;
+}
+/* Estilo para el li en estado normal */
+.NavBar .Links li {
+    cursor: default; /* El cursor normal */
+}
+.NavBar .Links li p {
+    color: #000000;
+    transition: color 0.3s ease; 
+}
+.NavBar .Links li p:hover {
+    color: #575757;
+}
+/* Efecto de hover */
+.NavBar .Links li:hover {
+    cursor: pointer; /* Cambia el cursor a una mano */
+    
 }
 .Part2{
     margin-left: 350px;

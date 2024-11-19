@@ -1,24 +1,22 @@
 
-body{
+body {
     margin: 0;
     padding: 0;
-    border: 0;
-}
-.page-container {
-    position: relative;
-    top: 104px;
-    height: 100vh;
-    width: 1519px;
-    height: 3000px;
-    overflow: hidden;
     background-color: #EAEAEA;
-    
+    max-width: 100%; /* Evita usar un valor fijo */
 }
 
+.page-container {
+    position: relative;
+    top: 25px;
+    min-height: 400vh; /* Asegura que la página cubra toda la ventana */
+    width: 100%; /* Ajusta al ancho de la pantalla */
+    background-color: #EAEAEA;
+}
 
 .background-container {
     position: absolute;
-    width: 1538px;
+    width: 100%; /* Ajusta al ancho de la pantalla */
     top: 0;
     left: 0;
     z-index: 0; /* Mantiene la imagen de fondo en la capa inferior */
@@ -132,9 +130,11 @@ body{
     align-items: center; /* Centra los elementos verticalmente */
     justify-content: center; /* Centra el contenido dentro de cada sección */
 }
-
 .aviso_Condi{
-    margin-top: 50px;
+    margin-top: 40px;
+}
+.aviso_Condi p{
+    
     color: #51A1D4;
 }
 .FerreExpress{
