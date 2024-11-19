@@ -3,10 +3,12 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
+    padding-top: 120px; /* Añade espacio en el contenido principal */
   }
   
   .acerca-de-nosotros {
-    margin-top: 70px;
+    position: relative; /* Asegúrate de que sea relativo */
+    top: 50px; /* Mueve el contenedor hacia abajo */
     padding: 40px;
     margin: 0 auto;
     max-width: 1200px;
@@ -14,6 +16,7 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
+  
   
   .acerca-de-nosotros h2.titulo {
     font-size: 28px;

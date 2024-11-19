@@ -12,6 +12,24 @@ const PuntosFisicos = () => {
       const map = new window.google.maps.Map(mapRef.current, {
         center: coordinates,
         zoom: 16,
+        styles: [
+          { elementType: 'geometry', stylers: [{ color: '#212121' }] },
+          { elementType: 'labels.icon', stylers: [{ visibility: 'off' }] },
+          { elementType: 'labels.text.fill', stylers: [{ color: '#757575' }] },
+          { elementType: 'labels.text.stroke', stylers: [{ color: '#212121' }] },
+          { featureType: 'administrative.locality', elementType: 'labels.text.fill', stylers: [{ color: '#9e9e9e' }] },
+          { featureType: 'poi', elementType: 'labels.text.fill', stylers: [{ color: '#9e9e9e' }] },
+          { featureType: 'poi.park', elementType: 'geometry', stylers: [{ color: '#181818' }] },
+          { featureType: 'poi.park', elementType: 'labels.text.fill', stylers: [{ color: '#616161' }] },
+          { featureType: 'road', elementType: 'geometry', stylers: [{ color: '#2c2c2c' }] },
+          { featureType: 'road.arterial', elementType: 'geometry', stylers: [{ color: '#373737' }] },
+          { featureType: 'road.highway', elementType: 'geometry', stylers: [{ color: '#3c3c3c' }] },
+          { featureType: 'road.local', elementType: 'geometry', stylers: [{ color: '#3e3e3e' }] },
+          { featureType: 'transit', elementType: 'geometry', stylers: [{ color: '#2f2f2f' }] },
+          { featureType: 'transit.station', elementType: 'labels.text.fill', stylers: [{ color: '#8a8a8a' }] },
+          { featureType: 'water', elementType: 'geometry', stylers: [{ color: '#000000' }] },
+          { featureType: 'water', elementType: 'labels.text.fill', stylers: [{ color: '#3d3d3d' }] }
+        ],
       });
 
       // Agrega un marcador en las coordenadas proporcionadas
@@ -37,7 +55,8 @@ const PuntosFisicos = () => {
 
   return (
     <div className="puntos-fisicos-container">
-      <h2 className="puntos-fisicos-title">Puntos físicos<p>Direccion: Calle 16 #76-28 Cali-Colombia</p></h2>
+      <h2 className="puntos-fisicos-title">Puntos físicos</h2>
+      <p className="puntos-fisicos-direccion">Dirección: Calle 16 #76-28 Cali-Colombia</p>
       <div ref={mapRef} className="map-container"></div>
     </div>
   );

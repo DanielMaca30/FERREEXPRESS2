@@ -2,8 +2,8 @@
 .Centrador {
     position: relative;
     top: 100px;
-    width: 1535px;
-    height: 3000px;   /* Define una altura grande para esta sección */
+    width: 100%;
+    height: 100%;   /* Define una altura grande para esta sección */
     display: flex;
     justify-content: center;
     background-color: #EAEAEA;
@@ -145,7 +145,7 @@
     height: 20px;
 }
 .Container-Pie {
-    width: 100%;
+    width: 1542px;
     background-color: #F0F0F0;
     border-top: 1px solid #D3D3D3; /* Borde superior */
     height: 266px;

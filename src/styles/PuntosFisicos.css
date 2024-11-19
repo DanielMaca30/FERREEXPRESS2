@@ -1,30 +1,33 @@
 .puntos-fisicos-container {
-    margin-top: 70px;
-    background-color: #eaeaea;
-    padding: 20px;
-    font-family: Arial, sans-serif;
-    width: 100%; /* Ajusta según tu diseño */
-    max-width: 1500px;
-  }
-  
-  .puntos-fisicos-title {
-    margin-bottom: 20px;
-    font-size: 18px;
-    font-weight: bold;
-    color: black;
-    text-align: left;
-  }
-  
-  .map-container {
-    width: 100%;
-    height: 600px; /* Aumentamos la altura del contenedor */
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .puntos-fisicos-direccion {
-    margin-top: 10px;
-    font-size: 14px;
-    color: #555;
-  }
+  margin-top: 70px;
+  background-color: #ffffff; /* Fondo oscuro para resaltar el mapa */
+  padding: 30px;
+  font-family: 'Arial', sans-serif;
+  width: 100%;
+  max-width: 1500px;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.puntos-fisicos-title {
+  margin-bottom: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #fcc016; /* Color llamativo en amarillo */
+  text-align: left;
+}
+
+.puntos-fisicos-direccion {
+  font-size: 16px;
+  color: #ffffff; /* Blanco para texto de dirección */
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.map-container {
+  width: 100%;
+  height: 500px; /* Ajusta la altura del mapa */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
