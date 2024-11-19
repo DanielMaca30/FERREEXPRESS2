@@ -1,0 +1,110 @@
+.formulario-container {
+  background-color: #f9be20; /* Amarillo */
+  width: 100%; /* Ocupa todo el ancho */
+  height: 100vh; /* Ocupa toda la altura de la viewport */
+  display: flex;
+  flex-direction: column;
+  align-items: center;  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+  color: black;
+}
+
+.logo {
+  width: 20%; /* Adjust the width as needed */
+  margin-bottom: 20px;
+}
+
+form {
+  background-color: #fff;
+  padding: 50px; /* Reduce padding to reduce spacing */
+  border-radius: 10px;
+  box-sizing: unset;
+  width: 18%; /* Increased width */
+  max-width: 400px;
+  max-width: none; /* Quita el límite de ancho máximo */
+  position: relative; /* Hace que el formulario sea un contenedor de posicionamiento */
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group#password-group label::after {
+  content: " (Mínimo 6 caracteres)";
+  color: #888;
+  font-size: 0.9em;
+  font-weight: normal;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold; /* Agregamos negrita a los labels */
+}
+
+input {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #000; /* Increased border width and color */
+  border-radius: 5px;
+  background-color: #fff;
+  color: black;
+}
+
+input::placeholder {
+  font-weight: bold; /* Agregamos negrita a los placeholders */
+}
+
+label, input {
+  line-height: 1.5;
+}
+
+button {
+  background-color: #f26b76;
+  color: black;
+  padding: 10px 138px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold; /* Agregamos negrita a los labels */
+  margin-top: 10px;
+}
+
+.password-requirements {
+  display: inline-block; /* Muestra el texto en línea con el input */
+  margin-left: 10px; /* Agrega un margen izquierdo para separar el texto del input */
+  font-size: 12px;
+  color: black;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  padding: 10px;
+  width: 100%;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px; /* Ajusta el tamaño de la fuente según tus preferencias */
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px; /* Espacio entre los enlaces */
+}
+
+.footer-copyright {
+  margin-right: 20px;
+  text-align: right;
+}

@@ -1,0 +1,80 @@
+.formulario-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align items to the top */
+  align-items: center;
+  padding: 90px 0; /* Adjust top and bottom padding as needed */
+}
+form {
+  background-color: #fff;
+  padding: 50px; /* Reduce padding to reduce spacing */
+  border-radius: 10px;
+  box-sizing: unset;
+  width: 18%; /* Increased width */
+  max-width: 400px;
+  max-width: none; /* Quita el límite de ancho máximo */
+  position: relative; /* Hace que el formulario sea un contenedor de posicionamiento */
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+button {
+  background-color: #fff; /* Fondo blanco */
+  color: black;
+  padding: 10px 144px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold; /* Agregamos negrita a los labels */
+  margin-top: 10px;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+.mensaje-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.mensaje-container hr {
+  border: 1px solid #ccc; /* Ajusta el color de la línea divisoria */
+  width: 80%; /* Ajusta el ancho de la línea divisoria */
+  margin: 10px auto; /* Ajusta los márgenes superior e inferior */
+}
+
+.btn-crear-cuenta {
+  background-color: #fff; /* Fondo blanco */
+  color: #333; /* Texto negro */
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px 125px;
+  cursor: pointer;
+  font-size: 16px; /* Ajusta el tamaño de la fuente */
+  margin-top: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Add box-shadow */
+  font-weight:lighter; /* Agregamos negrita a los labels */
+}
