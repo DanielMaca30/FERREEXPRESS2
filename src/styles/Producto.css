@@ -1,7 +1,7 @@
 /* Centrado principal */
 .Centrador {
   position: relative;
-  top: 100px;
+  top: 30px;
   width: 1535px;
   height: 5000px;
   display: flex;

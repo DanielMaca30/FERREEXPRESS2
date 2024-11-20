@@ -49,7 +49,11 @@ const Producto = () => {
         const productSnap = await getDoc(productRef);
 
         if (productSnap.exists()) {
-          setProduct(productSnap.data());
+          const fetchedProduct = productSnap.data();
+          setProduct(fetchedProduct);
+
+          // Imprime el producto en consola para depurar
+          console.log("Producto obtenido:", fetchedProduct);
         } else {
           console.log('No se encontró el producto');
         }
@@ -61,14 +65,23 @@ const Producto = () => {
     getProduct();
   }, [productId]);
 
-  // Función para manejar el clic en "Comprar ahora"
   const handleBuyNow = () => {
-    navigate('/carrito', { state: { productId: product.id, quantity } });
+    navigate('/carrito', { state: { product, quantity } });
+  };
+
+  const handleAddToCart = () => {
+    if (!product || !quantity) {
+      console.error("Producto o cantidad no válidos.");
+      return;
+    }
+    navigate('/carrito', { state: { product, quantity } });
   };
 
   // Funciones para aumentar o disminuir la cantidad
-  const increaseQuantity = () => setQuantity((prev) => prev + 1);
+  const increaseQuantity = () => setQuantity((prev) => Math.max(prev + 1, 1));
   const decreaseQuantity = () => setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
+
+  console.log("Cantidad seleccionada:", quantity);
 
   if (!product) {
     return <div>Cargando...</div>;

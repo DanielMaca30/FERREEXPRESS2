@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import '../styles/FormularioRegistro.css';
-import logoImage from '../assets/Imagenes/Logo FerreExpres Largo_Mesa de trabajo 1.png';
 import { Link, useNavigate } from 'react-router-dom';
-import { auth } from '../firebase-config';
+import { auth } from './firebaseConfig';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 
 const FormularioRegistro = () => {
@@ -15,25 +14,37 @@ const FormularioRegistro = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Validar si las contraseñas coinciden
     if (password !== confirmPassword) {
       setError('Las contraseñas no coinciden');
       return;
     }
-  
+
+    // Validación de formato de correo electrónico
+    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    if (!emailPattern.test(email)) {
+      setError('Por favor ingresa un correo electrónico válido');
+      return;
+    }
+
     try {
       await createUserWithEmailAndPassword(auth, email, password);
-      setTimeout(() => {
-        navigate('/');  // Redirige al inicio de sesión después de crear la cuenta
-      }, 2000); // Esperar 2 segundos antes de redirigir al login
+      navigate('/login');  // Redirige inmediatamente al login después de crear la cuenta
     } catch (err) {
-      setError(err.message);
+      // Manejo de errores de Firebase
+      if (err.code === 'auth/email-already-in-use') {
+        setError('Este correo electrónico ya está en uso');
+      } else if (err.code === 'auth/weak-password') {
+        setError('La contraseña debe tener al menos 6 caracteres');
+      } else {
+        setError('Error al crear la cuenta. Intenta nuevamente.');
+      }
     }
   };
-  
 
   return (
     <div className="formulario-container">
-      <img src={logoImage} alt="Logo de FerreExpress" className="logo" />
       <form onSubmit={handleSubmit}>
         <h2>Crear Cuenta</h2>
         {error && <p className="error">{error}</p>}
@@ -53,9 +64,10 @@ const FormularioRegistro = () => {
           <label htmlFor="confirmPassword">Confirmar contraseña</label>
           <input type="password" id="confirmPassword" name="confirmPassword" required value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
         </div>
+        
         <button type="submit">Registrar</button>
         <p>
-          ¿Ya tienes una cuenta? <Link to="/">Inicia Sesión</Link>
+          ¿Ya tienes una cuenta? <Link to="/ingresa">Inicia Sesión</Link>
         </p>
       </form>
     </div>

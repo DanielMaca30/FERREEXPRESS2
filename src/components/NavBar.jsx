@@ -9,6 +9,7 @@ import Ingresa from '../Login-sign/Ingresa.jsx'; // Y así sucesivamente
 import Principal from './Principal.jsx';
 import PuntosFisicos from './PuntosFisicos.jsx';
 import Producto from './Producto.jsx';
+import Carrito from './Carrito.jsx';
 
 const NavBar = () => {
   return (
@@ -25,7 +26,7 @@ const NavBar = () => {
             <li><Link to="/ofertas">Ofertas</Link></li>
             <li><Link to="/acercaDeNosotros">Acerca de Nosotros</Link></li>
             <li><Link to="/puntosFisicos">Puntos Físicos</Link></li>
-            <li><Link to="/misPedidos">Mis Pedidos</Link></li>
+            <li><Link to="/Carrito">Carrito</Link></li>
             <li><Link to="/creaTuCuenta">Crea tu cuenta</Link></li>
             <li><Link to="/ingresa">Ingresa</Link></li>
           </ul>
@@ -35,7 +36,7 @@ const NavBar = () => {
           <Route path="/ofertas" element={<Ofertas />} />
           <Route path="/acercaDeNosotros" element={<AcercaDeNosotros />} />
           <Route path="/puntosFisicos" element={<PuntosFisicos />} />
-          <Route path="/misPedidos" element={<MisPedidos />} />
+          <Route path="/Carrito" element={<Carrito />} />
           <Route path="/creaTuCuenta" element={<CreaTuCuenta />} />
           <Route path="/ingresa" element={<Ingresa />} />
           <Route path='/producto/:productId' element={<Producto/>}/>
