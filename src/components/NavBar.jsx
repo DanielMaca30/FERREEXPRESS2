@@ -1,16 +1,36 @@
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Link } from 'react-router-dom';
-import Ofertas from './Ofertas'; // O el componente que quieres mostrar
-import AcercaDeNosotros from './AcercaDeNosotros'; // O el componente correspondiente
-import MisPedidos from './MisPedidos'; // Lo mismo aquí
-import CreaTuCuenta from '../Login-sign/CreaTuCuenta.jsx';
-import Ingresa from '../Login-sign/Ingresa.jsx'; // Y así sucesivamente
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { auth } from './firebaseConfig'; // Importa tu configuración de Firebase
+import { signOut } from 'firebase/auth'; // Importa la función de cerrar sesión
+import Ofertas from './Ofertas';
+import AcercaDeNosotros from './AcercaDeNosotros';
+import MisPedidos from './MisPedidos';
 import Principal from './Principal.jsx';
 import PuntosFisicos from './PuntosFisicos.jsx';
 import Producto from './Producto.jsx';
+import FormularioInicioSesion from './FormularioInicioSesion.jsx';
+import FormularioRegistro from './FormularioRegistro.jsx';
 
 const NavBar = () => {
+  const [currentUser, setCurrentUser] = useState(null);
+
+  useEffect(() => {
+    const unsubscribe = auth ? auth.onAuthStateChanged(user => {
+      setCurrentUser(user);
+    }) : () => {};
+
+    return () => unsubscribe();
+  }, []);
+
+  const handleLogout = async () => {
+    try {
+      await signOut(auth);
+      setCurrentUser(null); // Limpia el estado después de cerrar sesión
+    } catch (error) {
+      console.error('Error al cerrar sesión:', error);
+    }
+  };
+
   return (
     <Router>
       <div className='NavBar'>
@@ -26,8 +46,17 @@ const NavBar = () => {
             <li><Link to="/acercaDeNosotros">Acerca de Nosotros</Link></li>
             <li><Link to="/puntosFisicos">Puntos Físicos</Link></li>
             <li><Link to="/misPedidos">Mis Pedidos</Link></li>
-            <li><Link to="/creaTuCuenta">Crea tu cuenta</Link></li>
-            <li><Link to="/ingresa">Ingresa</Link></li>
+            {currentUser ? (
+              <li>
+                {currentUser.email}
+                <button onClick={handleLogout} className="btn-logout">Salir</button>
+              </li>
+            ) : (
+              <>
+                <li><Link to="/creaTuCuenta">Crea tu cuenta</Link></li>
+                <li><Link to="/ingresa">Ingresa</Link></li>
+              </>
+            )}
           </ul>
         </div>
         <Routes>
@@ -36,9 +65,9 @@ const NavBar = () => {
           <Route path="/acercaDeNosotros" element={<AcercaDeNosotros />} />
           <Route path="/puntosFisicos" element={<PuntosFisicos />} />
           <Route path="/misPedidos" element={<MisPedidos />} />
-          <Route path="/creaTuCuenta" element={<CreaTuCuenta />} />
-          <Route path="/ingresa" element={<Ingresa />} />
-          <Route path='/producto/:productId' element={<Producto/>}/>
+          <Route path="/creaTuCuenta" element={<FormularioRegistro />} />
+          <Route path="/ingresa" element={<FormularioInicioSesion />} />
+          <Route path='/producto/:productId' element={<Producto />} />
         </Routes>
       </div>
     </Router>
