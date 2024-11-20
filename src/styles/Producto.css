@@ -86,9 +86,9 @@
 }
 
 .quantity-control button {
-  width: 60px;
-  height: 30px;
-  font-size: 20px;
+  width: 30px; /* Reducido el ancho */
+  height: 30px; /* Mantengo la altura proporcional */
+  font-size: 16px; /* Tamaño de fuente más pequeño */
   font-weight: bold;
   color: #fbc02d; /* Amarillo visible */
   background-color: rgba(255, 235, 59, 0.2); /* Amarillo suave y transparente */
@@ -100,6 +100,7 @@
   justify-content: center;
   transition: all 0.3s ease;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  padding: 10px 20px;
 }
 
 .quantity-control button:hover {

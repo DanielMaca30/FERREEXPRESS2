@@ -50,7 +50,7 @@ const FormularioInicioSesion = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <button type="submit">Iniciar Sesión</button>
+        <button type="submit" id='boton'>Iniciar Sesión</button>
       </form>
       <p>
         ¿No tienes una cuenta? <a href="/creaTuCuenta">Regístrate aquí</a>
